@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
     s.platform          = :ios
     s.source            = { :git => 'git@github.com/noheltcj/multi-native.git', :tag => '0.0.1' }
     s.ios.deployment_target = '9.0'
-    s.ios.vendored_frameworks = 'multi-native-ios/build/bin/0.0.1/MultiNative.framework'
+    s.ios.vendored_frameworks = 'multi-native-ios/build/konan/bin/ios_x64/MultiNative.framework'
 end
