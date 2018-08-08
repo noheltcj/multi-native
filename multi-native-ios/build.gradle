@@ -11,12 +11,32 @@ buildscript {
 
 apply plugin: 'konan'
 
-konan.targets = ['iphone', 'iphone_sim']
+def frameworkName = 'MultiNative'
 
 konanArtifacts {
-    framework("MultiNative") {
+    framework(frameworkName, targets: ['ios_arm64', 'ios_x64' ]) {
         enableMultiplatform true
     }
+}
+
+def outputDirectory = "build/bin/${project.version}"
+def outputFramework = "$outputDirectory/${frameworkName}.framework"
+
+task combineArchitectures(type: Exec, dependsOn: compileKonanMultiNative) {
+    executable 'lipo'
+    args = ['-create', '-arch', 'arm64',
+            new File(compileKonanMultiNativeIos_arm64.artifact, frameworkName),
+            '-arch', 'x86_64',
+            new File(compileKonanMultiNativeIos_x64.artifact, frameworkName),
+            '-output', "$outputFramework/$frameworkName"
+    ]
+}
+
+task exportFramework(type: Copy, dependsOn: compileKonanMultiNative) {
+    from compileKonanMultiNativeIos_arm64.artifact
+    into outputFramework
+    exclude frameworkName
+    finalizedBy combineArchitectures
 }
 
 dependencies {

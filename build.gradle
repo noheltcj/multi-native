@@ -1,5 +1,10 @@
 buildscript {
     ext {
+        project_version = '0.0.1'
         kotlin_version = '1.2.51'
     }
+}
+
+subprojects {
+    version = project_version
 }
