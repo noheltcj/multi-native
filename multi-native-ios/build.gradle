@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies" }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:${project.property('konan.plugin.version')}"
+    }
+}
+
+apply plugin: 'konan'
+
+def frameworkName = 'MultiNative'
+
+konanArtifacts {
+    framework(frameworkName, targets: ['ios_x64']) {
+        enableMultiplatform true
+    }
+}
+
+dependencies {
+    expectedBy project(':multi-native-common')
+}
