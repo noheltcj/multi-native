@@ -6,13 +6,12 @@ if ! [ -x "$(command -v lipo)" ]; then
 fi
 
 lipo -create \
-  -arch arm64 multi-native-ios/build/konan/bin/ios_arm64/MultiNative.framework/MultiNative \
-  -arch x86_64 multi-native-ios/build/konan/bin/ios_x64/MultiNative.framework/MultiNative \
-  -output build/ios/release/MultiNative.framework/MultiNative
+  -output build/ios/release/MultiNative.framework/MultiNative \
+  multi-native-ios/build/konan/bin/ios_arm64/MultiNative.framework/MultiNative \
+  multi-native-ios/build/konan/bin/ios_x64/MultiNative.framework/MultiNative \
 
 cp -R multi-native-ios/build/konan/bin/ios_arm64/MultiNative.framework/Headers build/ios/release/MultiNative.framework/
-cp -R multi-native-ios/build/konan/bin/ios_x64/MultiNative.framework/Modules build/ios/release/MultiNative.framework/
-cp -R multi-native-ios/build/konan/bin/ios_arm64/MultiNative.framework/ build/ios/release/MultiNative.framework/Info.plist
+cp -R multi-native-ios/build/konan/bin/ios_arm64/MultiNative.framework/Modules build/ios/release/MultiNative.framework/
 
 zip -r archive/MultiNative.zip LICENSE build/ios/release
 

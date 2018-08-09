@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.source                  = { :http => 'https://s3.us-east-2.amazonaws.com/multi-native-archive/MultiNative.zip' }
   s.source_files            = 'build/ios/release/MultiNative.framework/Headers/*.h'
   s.public_header_files     = 'build/ios/release/MultiNative.framework/Headers/*.h'
-  s.ios.deployment_target   = '10.0'
+  s.ios.deployment_target   = '9.0'
   s.ios.vendored_frameworks = 'build/ios/release/MultiNative.framework'
 end
