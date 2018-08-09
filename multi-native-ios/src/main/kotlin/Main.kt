@@ -1,0 +1,4 @@
+class KotlinIOS {
+  fun accessCommon() {
+  }
+}
