@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license                 = { :type => 'MIT', :file => 'LICENSE' }
   s.platform                = :ios
   s.requires_arc            = true
-  s.module_name             = "MultiNative"
+  s.module_name             = "MN"
   s.source                  = { :http => 'https://s3.us-east-2.amazonaws.com/multi-native-archive/MultiNative.zip' }
   s.source_files            = 'build/ios/release/MultiNative.framework/Headers/*.h'
   s.resource                = 'build/ios/release/MultiNative.framework/Info.plist'
