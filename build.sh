@@ -1,8 +1,8 @@
+set -e
+
 rm -rf build
 
 ./gradlew build
-
-set -e
 
 if ! [ -x "$(command -v lipo)" ]; then
   echo 'Error: lipo is not installed.' >&2
