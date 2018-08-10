@@ -9,10 +9,8 @@ Pod::Spec.new do |s|
   s.requires_arc            = true
   s.module_name             = "MultiNative"
   s.source                  = { :http => 'https://s3.us-east-2.amazonaws.com/multi-native-archive/MultiNative.zip' }
-  s.source_files            = [
-    'build/ios/release/MultiNative.framework/Headers/*.h',
-    'build/ios/release/MultiNative.framework/Info.plist'
-  ]
+  s.source_files            = 'build/ios/release/MultiNative.framework/Headers/*.h'
+  s.resource                = 'build/ios/release/MultiNative.framework/Info.plist'
   s.public_header_files     = 'build/ios/release/MultiNative.framework/Headers/*.h'
   s.ios.deployment_target   = '9.0'
   s.ios.vendored_frameworks = 'build/ios/release/MultiNative.framework'

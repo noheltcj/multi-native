@@ -1,3 +1,5 @@
+rm -rf build
+
 ./gradlew build
 
 set -e
