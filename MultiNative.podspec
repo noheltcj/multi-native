@@ -8,8 +8,10 @@ Pod::Spec.new do |s|
   s.platform                = :ios
   s.requires_arc            = true
   s.module_name             = "MultiNative"
-  s.source                  = { :git => 'https://github.com/noheltcj/multi-native.git', :tag => '0.0.2' }
-  s.source_files            = 'archive/MultiNative.zip'
-  s.ios.deployment_target   = '10.0'
-  s.ios.vendored_frameworks = 'MultiNative.framework'
+  s.source                  = { :http => 'https://s3.us-east-2.amazonaws.com/multi-native-archive/MultiNative.zip' }
+  s.source_files            = 'build/ios/release/MultiNative.framework/Headers/*.h'
+  s.resource                = 'build/ios/release/MultiNative.framework/Info.plist'
+  s.public_header_files     = 'build/ios/release/MultiNative.framework/Headers/*.h'
+  s.ios.deployment_target   = '9.0'
+  s.ios.vendored_frameworks = 'build/ios/release/MultiNative.framework'
 end

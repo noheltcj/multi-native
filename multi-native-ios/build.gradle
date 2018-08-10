@@ -14,7 +14,7 @@ apply plugin: 'konan'
 def frameworkName = 'MultiNative'
 
 konanArtifacts {
-    framework(frameworkName, targets: ['ios_x64', 'ios_arm64']) {
+    framework(frameworkName, targets: ['iphone_sim', 'iphone']) {
         enableMultiplatform true
     }
 }
