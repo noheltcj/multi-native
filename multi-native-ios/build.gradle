@@ -15,6 +15,7 @@ def frameworkName = 'MultiNative'
 
 konanArtifacts {
     framework(frameworkName, targets: ['iphone_sim', 'iphone']) {
+        extraOpts '-module_name', 'MN'
         enableMultiplatform true
     }
 }
