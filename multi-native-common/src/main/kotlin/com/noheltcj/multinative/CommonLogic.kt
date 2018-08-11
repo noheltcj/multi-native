@@ -1,7 +1,7 @@
 package com.noheltcj.multinative
 
-class CommonLogic {
+class CommonLogic(private val outputAdapter: OutputAdapter) {
   fun helloNative() {
-    println("Hello Native")
+    outputAdapter.output("Hello Native")
   }
 }

@@ -8,5 +8,4 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-js"
     expectedBy project(":multi-native-common")
-    testCompile "org.jetbrains.kotlin:kotlin-test-js"
 }
