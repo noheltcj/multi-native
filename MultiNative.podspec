@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                    = 'MultiNative'
-  s.version                 = '0.0.2'
+  s.version                 = '0.0.3'
   s.summary                 = 'A multiplatform ios framework'
   s.homepage                = 'https://github.com/noheltcj/multi-native.git'
   s.author                  = { 'Colton Nohelty' => 'noheltycolton@gmail.com' }
