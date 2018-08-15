@@ -11,6 +11,7 @@ pluginManagement {
         }
     }
 }
+
 rootProject.name = 'multi-native'
 
 include 'multi-native-common', 'multi-native-jvm', 'multi-native-js', 'multi-native-ios'
